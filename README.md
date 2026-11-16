@@ -36,6 +36,19 @@ Tips:
 - **`npm install` fails behind a corporate proxy:** configure npm's proxy and CA settings; do not disable TLS verification.
 - **Statue looks wrong after editing:** the glasses offset is tuned in `src/statue/statue.js` (`glassesOffset`, `glassesScale`). Freeze the idle motion for tuning with `__statue.setReducedMotion(true)` in the console.
 
+## Enquiry form (Google Form)
+
+The contact form on the site submits into a Google Form, and each response is emailed to you. Set it up once:
+
+1. Sign in to the Google account that should receive enquiries (a personal Gmail works best; a company Workspace account can block outside visitors).
+2. Open https://script.google.com, create a new project, and paste in [`scripts/create-google-form.gs`](scripts/create-google-form.gs).
+3. Optionally set `NOTIFY_EMAIL` at the top (defaults to the signed-in account).
+4. Run the `setup` function and approve the permissions.
+5. In the execution log, copy the printed `ENQUIRY` block over the one in `src/content.js`.
+6. Run `npm run dev`, submit a test enquiry, and check the Google Form's Responses tab and your inbox.
+
+Until `ENQUIRY.formId` is filled in, the form only works in `npm run dev` (it logs the payload to the console) and shows a "not connected yet" message on a deployed site. The option lists in `src/content.js` (`OPTIONS`) must match the ones in the script. Run `setup` only once, since it creates a new form each time.
+
 ## Deploy
 
 `dist/` is plain static files. Use Vercel, Netlify, Cloudflare Pages or S3 + CDN. Build command `npm run build`, output directory `dist`.
@@ -44,7 +57,8 @@ Tips:
 
 | What | Where |
 | --- | --- |
-| Email, case studies, statue click lines | `src/content.js` (email also in `index.html`) |
+| Enquiry form connection, option lists, case studies, statue click lines | `src/content.js` |
+| Enquiry form fields and logic | `index.html` (`#enquiry`), `src/modules/enquiry.js` |
 | Page copy and sections | `index.html` |
 | Colours, type, layout | `src/styles.css` (tokens at the top) |
 | Statue look, lights, glasses, rig | `src/statue/statue.js` |

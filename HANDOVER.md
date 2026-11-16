@@ -48,7 +48,8 @@ Vite 5 + vanilla JS (ES modules). three 0.170, gsap 3.12 + ScrollTrigger, lenis 
 
 ## Content rules (important)
 - Case studies are **labelled placeholders**. Never invent clients, numbers, testimonials or results. Real ones go in `src/content.js`.
-- Email `hello@humorlabs.in` and the social links (`#`) are placeholders in `index.html` and `src/content.js`.
+- Social links (`#`) in the footer are placeholders. There is no public email address on the site; contact is the enquiry form.
+- **Enquiry form:** `#enquiry` in `index.html`, logic in `src/modules/enquiry.js`, config in `ENQUIRY` / `OPTIONS` in `src/content.js`. It POSTs (no-cors) to a Google Form's `formResponse` URL. The Form and the "email me each response" trigger are created by `scripts/create-google-form.gs` (run once in Google Apps Script; it prints the config to paste). **Status: UI, validation, honeypot and dev-mode submit tested; the Google side is NOT connected or tested yet** (`ENQUIRY.formId` is empty). In production with no `formId` the form shows "not connected yet" instead of pretending to send. Google returns an opaque response, so success means "request sent", not "confirmed stored".
 - The H symbol is rebuilt as SVG from the logo image (no vector master was supplied). Replace with the official vector when available (`index.html`, `public/h-symbol.svg`, `public/favicon.svg`).
 
 ## Environment notes
@@ -56,7 +57,7 @@ Vite 5 + vanilla JS (ES modules). three 0.170, gsap 3.12 + ScrollTrigger, lenis 
 - Hero statue needs WebGL; without it an SVG H fallback shows.
 
 ## Suggested next steps (in order)
-1. Real content (cases, email, socials). 2. Cross-browser/device testing. 3. Lighthouse and axe pass (font preloads, contrast of grey text, keyboard route to statue reaction). 4. Working contact form (Formspree or serverless). 5. Launch basics: OG image, `robots.txt`, sitemap, 404, security headers. 6. Deploy via Vercel, Netlify or Cloudflare Pages from GitHub. 7. Enhancements: thicker curls on the statue, device-motion on phones, per-case URLs, CMS for cases.
+1. Connect the Google Form (run the Apps Script, paste `ENQUIRY`, send a real test enquiry end to end). 2. Real content (cases, socials). 3. Cross-browser/device testing. 4. Lighthouse and axe pass (font preloads, contrast of grey text, keyboard route to statue reaction). 5. Launch basics: OG image, `robots.txt`, sitemap, 404, security headers. 6. Deploy via Vercel, Netlify or Cloudflare Pages from GitHub. 7. Enhancements: thicker curls on the statue, device-motion on phones, per-case URLs, CMS for cases.
 
 ## Do not
 - Redraw or distort the H symbol, add fake stats, or add gradient-heavy "SaaS" looks (brand brief forbids them).

@@ -104,11 +104,4 @@ export function initSections() {
 
 function simpleHooks() {
   $('#year').textContent = new Date().getFullYear();
-  $('#copyMail').addEventListener('click', async (e) => {
-    const mail = $('#mailText').textContent;
-    const btn = e.currentTarget;
-    try { await navigator.clipboard.writeText(mail); btn.textContent = 'Copied'; }
-    catch { const r = document.createRange(); r.selectNodeContents($('#mailText')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Press Ctrl+C'; }
-    setTimeout(() => (btn.textContent = 'Copy email'), 1800);
-  });
 }

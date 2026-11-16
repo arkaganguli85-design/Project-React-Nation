@@ -1,6 +1,23 @@
 // Single place to edit real content.
-export const SITE = {
-  email: 'hello@humorlabs.in', // placeholder: replace with the real address (also in index.html)
+
+// Enquiry form -> Google Form. Fill these in after running scripts/create-google-form.gs
+// (it prints this exact object). Until formId is set, the form only works in `npm run dev`
+// (it logs the payload instead of sending) and shows an error on the live site.
+export const ENQUIRY = {
+  formId: '', // the long id in https://docs.google.com/forms/d/e/<formId>/viewform
+  fields: {
+    name: '', email: '', phone: '', company: '', website: '',
+    offering: '', subOffering: '', description: '',
+    requirements: '', help: '', engagement: '', timeline: '', source: '',
+  }, // each value looks like 'entry.123456789'
+  fallbackEmail: '', // optional: shown only if sending fails
+};
+
+// Option labels must match the Google Form exactly (the Apps Script uses the same lists).
+export const OPTIONS = {
+  requirements: ['Culture Lab: social, content, influencers', 'Brand Lab: strategy, identity, campaigns', 'Growth Lab: performance, ads, analytics', 'Not sure yet'],
+  engagement: ['A one-off project', 'An ongoing monthly retainer', 'A specific campaign', 'Not sure yet'],
+  timeline: ['As soon as possible', 'Within 1 to 3 months', 'Just exploring'],
 };
 
 // PLACEHOLDER case studies. Do not add client names, numbers or results until verified.

@@ -246,15 +246,49 @@
       <div class="wrap cta__inner">
         <h2 id="ctaTitle" class="display display--xl" data-split>YOUR BRAND DESERVES BETTER THAN BORING.</h2>
         <p class="lede">Let's create something people actually want to pay attention to.</p>
-        <a id="ctaBtn" class="cta__btn magnetic" href="mailto:hello@humorlabs.in" data-glow data-cursor="GO">
-          <span class="cta__fill" aria-hidden="true"></span>
-          <span class="cta__label">LET'S MAKE SOMETHING HAPPEN</span>
-          <span class="cta__arrow" aria-hidden="true">&nearr;</span>
-        </a>
-        <div class="cta__mail">
-          <span>Or write to us:</span>
-          <code id="mailText">hello@humorlabs.in</code>
-          <button class="chip-btn" id="copyMail" type="button">Copy email</button>
+
+        <form id="enquiry" class="enq" novalidate aria-labelledby="enqTitle">
+          <h3 id="enqTitle" class="enq__title">Tell us about your brand</h3>
+          <p class="enq__intro">A few details help us reply with something useful. Fields marked * are required.</p>
+
+          <div class="enq__f"><label for="enqName">Your name *</label><input id="enqName" name="name" type="text" autocomplete="name" required><small class="enq__err" id="err-name"></small></div>
+          <div class="enq__f"><label for="enqEmail">Work email *</label><input id="enqEmail" name="email" type="email" autocomplete="email" inputmode="email" required><small class="enq__err" id="err-email"></small></div>
+          <div class="enq__f"><label for="enqCompany">Company or brand *</label><input id="enqCompany" name="company" type="text" autocomplete="organization" required><small class="enq__err" id="err-company"></small></div>
+          <div class="enq__f"><label for="enqPhone">Phone or WhatsApp</label><input id="enqPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="Optional"><small class="enq__err" id="err-phone"></small></div>
+          <div class="enq__f enq__f--full"><label for="enqWebsite">Website or Instagram</label><input id="enqWebsite" name="website" type="text" autocomplete="url" placeholder="Optional"><small class="enq__err" id="err-website"></small></div>
+
+          <div class="enq__f"><label for="enqOffering">Business offering *</label><input id="enqOffering" name="offering" type="text" placeholder="What does your business sell or do? e.g. Skincare" required><small class="enq__err" id="err-offering"></small></div>
+          <div class="enq__f"><label for="enqSub">Sub-business offering</label><input id="enqSub" name="subOffering" type="text" placeholder="Optional. e.g. Ayurvedic face serums"><small class="enq__err" id="err-subOffering"></small></div>
+          <div class="enq__f enq__f--full"><label for="enqDesc">Business description</label><textarea id="enqDesc" name="description" rows="3" placeholder="Who are your customers and where are you today?"></textarea><small class="enq__err" id="err-description"></small></div>
+
+          <fieldset class="enq__f enq__f--full enq__set" aria-describedby="err-requirements">
+            <legend>Business requirement</legend>
+            <div class="enq__chips" id="enqReq"></div>
+            <small class="enq__err" id="err-requirements"></small>
+          </fieldset>
+          <div class="enq__f enq__f--full"><label for="enqHelp">How can we help you? *</label><textarea id="enqHelp" name="help" rows="4" placeholder="Tell us the problem, the goal, or the idea you want to try." required></textarea><small class="enq__err" id="err-help"></small></div>
+
+          <div class="enq__f"><label for="enqEngagement">How would you like to work?</label><select id="enqEngagement" name="engagement"></select></div>
+          <div class="enq__f"><label for="enqTimeline">When do you want to start?</label><select id="enqTimeline" name="timeline"></select></div>
+          <div class="enq__f enq__f--full"><label for="enqSource">How did you hear about us?</label><input id="enqSource" name="source" type="text" placeholder="Optional"></div>
+
+          <div class="enq__hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company_site" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="enq__submit">
+            <button id="ctaBtn" class="cta__btn magnetic" type="submit" data-glow data-cursor="SEND">
+              <span class="cta__fill" aria-hidden="true"></span>
+              <span class="cta__label">LET'S MAKE SOMETHING HAPPEN</span>
+              <span class="cta__arrow" aria-hidden="true">&nearr;</span>
+            </button>
+            <p class="enq__status" id="enqStatus" role="status" aria-live="polite"></p>
+          </div>
+          <p class="enq__note">We use these details only to reply to your enquiry.</p>
+        </form>
+
+        <div id="enqDone" class="enq enq--done" hidden tabindex="-1" aria-live="polite">
+          <h3 class="enq__title" id="enqDoneTitle">Got it. Thank you.</h3>
+          <p class="enq__intro">Your enquiry is with the team. We will read it properly and reply by email.</p>
+          <button class="btn btn--lime" type="button" id="enqAgain">Send another</button>
         </div>
       </div>
     </section>
@@ -276,7 +310,7 @@
       </div>
       <nav aria-label="Footer"><h3>Navigate</h3><a href="#culture">Culture</a><a href="#labs">Labs</a><a href="#work">Work</a><a href="#lab">The Lab</a><a href="#why">Why us</a></nav>
       <div><h3>Services</h3><a href="#labs">Culture Lab</a><a href="#labs">Brand Lab</a><a href="#labs">Growth Lab</a></div>
-      <div><h3>Say hello</h3><a href="mailto:hello@humorlabs.in">hello@humorlabs.in</a><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">LinkedIn</a><a href="#" rel="noopener">YouTube</a><a class="btn btn--lime btn--sm" href="#contact">Let's talk</a></div>
+      <div><h3>Say hello</h3><a href="#enquiry">Send an enquiry</a><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">LinkedIn</a><a href="#" rel="noopener">YouTube</a><a class="btn btn--lime btn--sm" href="#contact">Let's talk</a></div>
     </div>
     <div class="wrap footer__legal"><span>&copy; <span id="year">2026</span> HUMOR LABS&trade;. All rights reserved.</span><button type="button" id="toTop" class="chip-btn">Back to top</button></div>
   </footer>

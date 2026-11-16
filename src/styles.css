@@ -306,6 +306,45 @@ html.has-cursor, html.has-cursor a, html.has-cursor button, html.has-cursor [tab
 .cta__mail { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; color: var(--mute); font-size: .98rem; }
 .cta__mail code { font: 500 1.05rem/1 var(--display); color: var(--white); user-select: all; }
 
+/* enquiry form: an off-white block so it reads as the one high-contrast moment on the page */
+.enq { width: 100%; max-width: 980px; background: var(--white); color: var(--black); border-radius: 8px; padding: clamp(22px, 4vw, 56px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px clamp(16px, 3vw, 36px); position: relative; }
+.enq > * { min-width: 0; }
+.enq__title, .enq__intro, .enq__f--full, .enq__submit, .enq__note { grid-column: 1 / -1; }
+.enq__title { font: 700 clamp(1.6rem, 3vw, 2.4rem)/1 var(--display); letter-spacing: -.03em; text-transform: uppercase; }
+.enq__intro { color: #4a4943; max-width: 52ch; margin-top: -10px; }
+.enq__f { display: grid; gap: 6px; align-content: start; border: 0; padding: 0; margin: 0; }
+.enq label, .enq legend { font: 600 .72rem/1.2 var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--black); padding: 0; }
+.enq input[type="text"], .enq input[type="email"], .enq input[type="tel"], .enq textarea, .enq select { width: 100%; font: 500 1.05rem/1.4 var(--body); color: var(--black); background: transparent; border: 0; border-bottom: 2px solid var(--black); border-radius: 0; padding: .6em 0; transition: background .2s, box-shadow .2s; appearance: none; -webkit-appearance: none; }
+.enq textarea { resize: vertical; min-height: 5.5em; }
+.enq select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%230B0B0B' stroke-width='2'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; padding-right: 28px; cursor: pointer; }
+.enq ::placeholder { color: #6b6a63; opacity: 1; }
+.enq input:focus-visible, .enq textarea:focus-visible, .enq select:focus-visible { outline: 3px solid var(--black); outline-offset: 2px; background-color: rgba(198, 255, 0, .35); border-radius: 2px; }
+.enq [aria-invalid="true"] { border-bottom-color: #b00020; }
+.enq__err { min-height: 0; color: #b00020; font: 500 .85rem/1.3 var(--body); }
+.enq__err:empty { display: none; }
+.enq__set { margin: 0; }
+.enq__chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.enq label.enq__chip { position: relative; cursor: pointer; letter-spacing: 0; text-transform: none; font: inherit; }
+.enq__chip input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.enq__chip span { display: inline-block; padding: .65em 1.1em; border: 2px solid var(--black); border-radius: 999px; font: 500 .95rem/1.2 var(--display); transition: background .2s, color .2s; }
+.enq__chip:hover span { background: rgba(198, 255, 0, .5); }
+.enq__chip input:checked + span { background: var(--black); color: var(--lime); }
+.enq__chip input:focus-visible + span { outline: 3px solid var(--black); outline-offset: 3px; }
+.enq__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.enq__submit { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 6px; }
+.enq__status { font: 500 .95rem/1.4 var(--body); color: #3a3933; min-height: 1.4em; }
+.enq__status.is-error { color: #b00020; font-weight: 600; }
+.enq__note { color: #4a4943; font-size: .85rem; margin-top: -6px; }
+.enq .cta__fill { background: var(--black); }
+.enq .cta__label, .enq .cta__arrow { transition: color .35s var(--ease); }
+.enq .cta__btn:hover .cta__label, .enq .cta__btn:hover .cta__arrow, .enq .cta__btn:focus-visible .cta__label, .enq .cta__btn:focus-visible .cta__arrow { color: var(--lime); }
+.enq .cta__btn:focus-visible { outline: 3px solid var(--black); outline-offset: 4px; }
+.cta__btn { border: 0; cursor: pointer; font-family: var(--display); }
+.cta__btn:disabled { opacity: .6; cursor: progress; }
+.enq--done { grid-template-columns: 1fr; justify-items: start; }
+.enq--done:focus { outline: none; }
+@media (max-width: 720px) { .enq { grid-template-columns: 1fr; } .enq__f--full { grid-column: auto; } .enq__submit .cta__btn { width: 100%; justify-content: space-between; } }
+
 /* ---------- FOOTER ---------- */
 .footer { background: #070707; border-top: 1px solid var(--line); padding: clamp(50px, 7vw, 100px) 0 28px; }
 .footer__grid { display: grid; grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 60px); }

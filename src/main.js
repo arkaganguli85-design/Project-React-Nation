@@ -7,6 +7,7 @@ import { initCursor, initMagnetic, initTilt } from './modules/pointer.js';
 import { initSections, heroIn } from './modules/sections.js';
 import { initCases } from './modules/cases.js';
 import { initLab } from './modules/lab.js';
+import { initEnquiry } from './modules/enquiry.js';
 import { initEasterEggs } from './modules/easter.js';
 
 // Three.js is the heavy part: load it in parallel with the intro, never block first paint.
@@ -41,6 +42,8 @@ function wireStatue(statue, canvas) {
   document.addEventListener('focusin', (e) => { if (e.target.closest('[data-glow]')) statue.setGlow(2.1); });
   document.addEventListener('focusout', () => statue.setGlow(1));
 
+  document.addEventListener('hl:enquiry-sent', () => { statue.react(); toast('Sent. The statue approves.'); });
+
   let line = 0;
   $('#statueHit').addEventListener('click', () => {
     statue.react();
@@ -58,6 +61,7 @@ async function start() {
   initCases();
   initSections();
   initLab();
+  initEnquiry();
 
   const statuePromise = bootStatue();
   await runIntro();
