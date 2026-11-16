@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>HUMOR LABS | Serious About Growth. Never Boring.</title>
+  <meta name="description" content="HUMOR LABS is a creative marketing agency that blends creativity, culture and performance to turn attention into real business growth.">
+  <meta name="theme-color" content="#0B0B0B">
+  <meta property="og:title" content="HUMOR LABS | Serious About Growth. Never Boring.">
+  <meta property="og:description" content="Marketing for brands that don't want to be boring.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300..700&display=swap">
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"HUMOR LABS","slogan":"Serious About Growth. Never Boring.","description":"Creative marketing agency: culture, brand and growth."}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- 01 OPENING -->
+  <div id="intro" role="dialog" aria-label="Welcome to HUMOR LABS" aria-modal="true">
+    <div class="intro__stage">
+      <svg id="introMark" class="intro__mark" viewBox="0 -30 280 215" aria-hidden="true">
+        <g class="m-stem m-stem--l"><polygon fill="#F7F6EF" points="60,12 110,12 65,165 15,165"/></g>
+        <g class="m-stem m-stem--r"><polygon fill="#F7F6EF" points="180,12 230,12 185,165 135,165"/></g>
+        <path class="m-bar" d="M 70 98 Q 125 162 172 94" fill="none" stroke="#F7F6EF" stroke-width="30"/>
+        <path class="m-arc" d="M 52 80 Q 125 150 190 74" fill="none" stroke="#C6FF00" stroke-width="24" pathLength="1"/>
+        <path class="m-spark" fill="#C6FF00" d="M 232 -22 H 272 V 18 H 258 V -8 H 232 Z"/>
+      </svg>
+      <p class="intro__name" aria-hidden="true"><span>HUMOR</span> <span>LABS</span></p>
+      <p class="intro__tag">Serious About Growth. <em>Never Boring.</em></p>
+    </div>
+    <div class="intro__ui">
+      <div class="intro__bar" aria-hidden="true"><i id="introBar"></i></div>
+      <button id="introEnter" class="btn btn--lime" type="button" data-cursor="ENTER">Enter</button>
+      <button id="introSkip" class="intro__skip" type="button">Skip intro</button>
+    </div>
+  </div>
+
+  <div id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><b id="cursorLabel"></b></span></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#hero" aria-label="HUMOR LABS home" id="logoLink">
+      <svg class="hmark" viewBox="0 -30 280 215" aria-hidden="true">
+        <polygon fill="#F7F6EF" points="60,12 110,12 65,165 15,165"/>
+        <polygon fill="#F7F6EF" points="180,12 230,12 185,165 135,165"/>
+        <path d="M 70 98 Q 125 162 172 94" fill="none" stroke="#F7F6EF" stroke-width="30"/>
+        <path class="hmark__arc" d="M 52 80 Q 125 150 190 74" fill="none" stroke="#C6FF00" stroke-width="24"/>
+        <path class="hmark__spark" fill="#C6FF00" d="M 232 -22 H 272 V 18 H 258 V -8 H 232 Z"/>
+      </svg>
+      <span class="nav__word">HUMOR<br>LABS</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#culture">Culture</a>
+      <a href="#labs">Labs</a>
+      <a href="#work">Work</a>
+      <a href="#lab">The Lab</a>
+      <a href="#why">Why us</a>
+    </nav>
+    <div class="nav__right">
+      <button id="motionToggle" class="chip-btn" type="button" aria-pressed="false" title="Pause or reduce motion">
+        <span class="chip-btn__dot" aria-hidden="true"></span><span id="motionLabel">Motion on</span>
+      </button>
+      <a class="btn btn--lime btn--sm magnetic" href="#contact">Let's talk</a>
+      <button id="menuBtn" class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><i></i><i></i></button>
+    </div>
+  </header>
+  <div id="menu" class="menu" hidden>
+    <nav aria-label="Mobile">
+      <a href="#culture">Culture</a><a href="#labs">Labs</a><a href="#work">Work</a><a href="#lab">The Lab</a><a href="#why">Why us</a><a href="#contact" class="menu__cta">Let's talk</a>
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- 02 HERO -->
+    <section id="hero" class="hero" aria-labelledby="heroTitle">
+      <div class="hero__arc" aria-hidden="true"></div>
+      <span class="spark spark--a" aria-hidden="true"></span>
+      <span class="spark spark--b" aria-hidden="true"></span>
+      <i class="float float--sq" aria-hidden="true" data-depth="40"></i>
+      <i class="float float--ring" aria-hidden="true" data-depth="-30"></i>
+      <i class="float float--tri" aria-hidden="true" data-depth="60"></i>
+
+      <div class="hero__copy">
+        <p class="eyebrow">Creative marketing agency</p>
+        <h1 id="heroTitle" class="hero__title" data-split>MARKETING FOR BRANDS THAT DON'T WANT TO BE <mark class="boring">BORING.</mark></h1>
+        <p class="hero__lede">We blend creativity, culture and performance to turn attention into real business growth.</p>
+        <div class="hero__cta">
+          <a class="btn btn--lime magnetic" href="#work" data-cursor="VIEW">Our work <span aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--ghost magnetic" href="#contact" data-glow data-cursor="TALK">Let's talk</a>
+        </div>
+      </div>
+
+      <div class="hero__statue" id="statueWrap">
+        <canvas id="statue" aria-label="A marble Greek bust wearing neon lime sunglasses. His head follows your cursor. Click him." role="img"></canvas>
+        <div class="statue-fallback" id="statueFallback" hidden aria-hidden="true">
+          <svg viewBox="0 -30 280 215"><polygon fill="#F7F6EF" points="60,12 110,12 65,165 15,165"/><polygon fill="#F7F6EF" points="180,12 230,12 185,165 135,165"/><path d="M 70 98 Q 125 162 172 94" fill="none" stroke="#F7F6EF" stroke-width="30"/><path d="M 52 80 Q 125 150 190 74" fill="none" stroke="#C6FF00" stroke-width="24"/><path fill="#C6FF00" d="M 232 -22 H 272 V 18 H 258 V -8 H 232 Z"/></svg>
+        </div>
+        <button id="statueHit" class="statue-hit" type="button" aria-label="Poke the statue" data-cursor="CLICK"></button>
+        <p class="statue-note" id="statueNote" aria-hidden="true">He's watching. Say hi.</p>
+      </div>
+
+      <a class="scrollcue" href="#culture" aria-label="Scroll to the next section"><span>Scroll</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <!-- 03 CULTURE -->
+    <section id="culture" class="culture" aria-labelledby="cultureTitle">
+      <div class="wrap">
+        <p class="eyebrow">Culture</p>
+        <h2 id="cultureTitle" class="display" data-split>THE INTERNET NEVER SLEEPS. NEITHER DO IDEAS.</h2>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__row" data-dir="-1"><span>TRENDS &nbsp;/&nbsp; HUMOUR &nbsp;/&nbsp; COMMUNITIES &nbsp;/&nbsp; CREATORS &nbsp;/&nbsp; CONTEXT &nbsp;/&nbsp; TRENDS &nbsp;/&nbsp; HUMOUR &nbsp;/&nbsp; COMMUNITIES &nbsp;/&nbsp; CREATORS &nbsp;/&nbsp; CONTEXT &nbsp;/&nbsp;</span></div>
+        <div class="marquee__row marquee__row--outline" data-dir="1"><span>ATTENTION &nbsp;/&nbsp; CONVERSATION &nbsp;/&nbsp; CULTURE &nbsp;/&nbsp; CONVERSION &nbsp;/&nbsp; ATTENTION &nbsp;/&nbsp; CONVERSATION &nbsp;/&nbsp; CULTURE &nbsp;/&nbsp; CONVERSION &nbsp;/&nbsp;</span></div>
+      </div>
+
+      <div class="wrap culture__grid">
+        <div class="culture__text">
+          <p class="lede">Modern marketing is no longer about shouting the loudest. It is about understanding culture, earning attention, starting conversations and turning that attention into measurable growth.</p>
+          <p>People scroll past anything that feels like an ad. They stop for things that feel like the internet they already live in: a sharp joke, a familiar tension, a format they recognise. We study that behaviour closely, then build campaigns that belong in it.</p>
+        </div>
+        <ul class="insights">
+          <li><h3>Relevance is earned</h3><p>Trends are borrowed. Cultural understanding is built from watching audiences, not copying them.</p></li>
+          <li><h3>Humour opens the door</h3><p>A good laugh buys you the next ten seconds. Strategy decides what you do with them.</p></li>
+          <li><h3>Insight steers the idea</h3><p>Every concept starts with what a specific audience actually cares about.</p></li>
+        </ul>
+      </div>
+
+      <div class="chips" id="chips" aria-label="Things we pay attention to">
+        <span class="chip" data-depth="18">the 3am idea</span>
+        <span class="chip chip--lime" data-depth="-26">the comment section</span>
+        <span class="chip" data-depth="34">audio that won't leave</span>
+        <span class="chip" data-depth="-14">quote-post energy</span>
+        <span class="chip chip--orange" data-depth="24">plot twist</span>
+        <span class="chip" data-depth="-32">the group chat</span>
+        <span class="chip chip--lime" data-depth="16">algorithm shift</span>
+        <span class="chip" data-depth="-20">inside joke</span>
+      </div>
+
+      <div class="wrap">
+        <div class="mm" id="mm">
+          <div class="mm__panel mm__panel--meme" tabindex="0">
+            <span class="mm__tag">The culture side</span>
+            <p class="mm__big">WE UNDERSTAND THE MEME.</p>
+            <span class="mm__ha" aria-hidden="true">ha</span>
+          </div>
+          <div class="mm__panel mm__panel--metrics" tabindex="0">
+            <span class="mm__tag">The performance side</span>
+            <p class="mm__big">BUT WE ALSO UNDERSTAND THE METRICS.</p>
+            <ul class="mm__kpis" aria-label="Metrics we track"><li>CTR</li><li>CPA</li><li>ROAS</li><li>CVR</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 LABS -->
+    <section id="labs" class="labs" aria-labelledby="labsTitle">
+      <div class="wrap">
+        <p class="eyebrow">What we do</p>
+        <h2 id="labsTitle" class="display" data-split>THREE LABS. ONE GROWTH MINDSET.</h2>
+      </div>
+      <div class="wrap labs__grid">
+        <article class="lab-card lab-card--culture tilt" tabindex="0" data-glow data-cursor="EXPLORE">
+          <div class="lab-card__glow" aria-hidden="true"></div>
+          <p class="lab-card__tag">Earn attention</p>
+          <h3>The Culture Lab</h3>
+          <ul>
+            <li>Social media strategy</li><li>Content creation</li><li>Influencer marketing</li><li>Cultural marketing</li><li>Trend-led campaigns</li>
+          </ul>
+          <p class="lab-card__more">Playful, expressive, experimental. Built for the feed, the format and the moment.</p>
+        </article>
+        <article class="lab-card lab-card--brand tilt" tabindex="0" data-glow data-cursor="EXPLORE">
+          <div class="lab-card__glow" aria-hidden="true"></div>
+          <p class="lab-card__tag">Build recognition</p>
+          <h3>The Brand Lab</h3>
+          <ul>
+            <li>Brand strategy</li><li>Identity</li><li>Positioning</li><li>Creative campaigns</li><li>Storytelling</li>
+          </ul>
+          <p class="lab-card__more">Sophisticated, editorial, design-led. A brand people can describe in one sentence.</p>
+        </article>
+        <article class="lab-card lab-card--growth tilt" tabindex="0" data-glow data-cursor="EXPLORE">
+          <div class="lab-card__glow" aria-hidden="true"></div>
+          <p class="lab-card__tag">Make attention count</p>
+          <h3>The Growth Lab</h3>
+          <ul>
+            <li>Performance marketing</li><li>Meta ads</li><li>Google ads</li><li>Lead generation</li><li>Conversion optimisation</li><li>Marketing analytics</li>
+          </ul>
+          <p class="lab-card__more">Structured, intelligent, data-driven. Every unit of spend has a job and a reason.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 05 WORK -->
+    <section id="work" class="work" aria-labelledby="workTitle">
+      <div class="work__pin">
+        <div class="wrap work__head">
+          <p class="eyebrow">Work</p>
+          <h2 id="workTitle" class="display" data-split>LESS TALK. MORE RECEIPTS.</h2>
+          <p class="work__note"><b>Placeholders.</b> These cards are clearly marked samples. Real case studies and verified results go in <code>src/content.js</code>.</p>
+        </div>
+        <div class="work__track" id="workTrack" role="list"></div>
+      </div>
+    </section>
+
+    <!-- 06 THE LAB -->
+    <section id="lab" class="thelab" aria-labelledby="labTitle">
+      <canvas id="labCanvas" aria-hidden="true"></canvas>
+      <div class="thelab__ui">
+        <p class="eyebrow">The Lab</p>
+        <h2 id="labTitle" class="thelab__title" aria-label="Good ideas don't come from playing safe.">
+          <span data-warp aria-hidden="true">GOOD IDEAS DON'T COME FROM PLAYING SAFE.</span>
+        </h2>
+        <p class="thelab__hint">Move around. Click to make something. Drag to throw it.</p>
+        <div class="thelab__btns">
+          <button class="btn btn--ghost btn--sm" id="labShake" type="button" data-cursor="SHAKE">Shake it</button>
+          <button class="btn btn--ghost btn--sm" id="labClear" type="button" data-cursor="CLEAR">Reset</button>
+        </div>
+        <p class="thelab__count" id="labCount" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- 07 WHY -->
+    <section id="why" class="why" aria-labelledby="whyTitle">
+      <div class="wrap">
+        <p class="eyebrow">Why HUMOR LABS</p>
+        <h2 id="whyTitle" class="display" data-split>WE TAKE YOUR GROWTH SERIOUSLY. OURSELVES? NOT ALWAYS.</h2>
+        <ul class="pairs">
+          <li class="pair" tabindex="0" data-cursor="+"><span class="pair__a">Creativity</span><i class="pair__plus" aria-hidden="true">+</i><span class="pair__b">Commercial strategy</span></li>
+          <li class="pair" tabindex="0" data-cursor="+"><span class="pair__a">Cultural intelligence</span><i class="pair__plus" aria-hidden="true">+</i><span class="pair__b">Audience insight</span></li>
+          <li class="pair" tabindex="0" data-cursor="+"><span class="pair__a">Content</span><i class="pair__plus" aria-hidden="true">+</i><span class="pair__b">Performance</span></li>
+          <li class="pair" tabindex="0" data-cursor="+"><span class="pair__a">Experimentation</span><i class="pair__plus" aria-hidden="true">+</i><span class="pair__b">Measurable outcomes</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 08 FINAL CTA -->
+    <section id="contact" class="cta" aria-labelledby="ctaTitle">
+      <div class="cta__arc" aria-hidden="true"></div>
+      <div class="wrap cta__inner">
+        <h2 id="ctaTitle" class="display display--xl" data-split>YOUR BRAND DESERVES BETTER THAN BORING.</h2>
+        <p class="lede">Let's create something people actually want to pay attention to.</p>
+        <a id="ctaBtn" class="cta__btn magnetic" href="mailto:hello@humorlabs.in" data-glow data-cursor="GO">
+          <span class="cta__fill" aria-hidden="true"></span>
+          <span class="cta__label">LET'S MAKE SOMETHING HAPPEN</span>
+          <span class="cta__arrow" aria-hidden="true">&nearr;</span>
+        </a>
+        <div class="cta__mail">
+          <span>Or write to us:</span>
+          <code id="mailText">hello@humorlabs.in</code>
+          <button class="chip-btn" id="copyMail" type="button">Copy email</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 09 FOOTER -->
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <svg class="footer__sig" id="sig" viewBox="0 -30 280 215" aria-hidden="true">
+          <polygon class="sig-s" points="60,12 110,12 65,165 15,165"/>
+          <polygon class="sig-s" points="180,12 230,12 185,165 135,165"/>
+          <path class="sig-s" d="M 70 98 Q 125 162 172 94" fill="none" stroke-width="30"/>
+          <path class="sig-a" d="M 52 80 Q 125 150 190 74" fill="none" stroke-width="24" pathLength="1"/>
+          <path class="sig-k" d="M 232 -22 H 272 V 18 H 258 V -8 H 232 Z"/>
+        </svg>
+        <p class="footer__word">HUMOR LABS</p>
+        <p class="footer__tag">Serious About Growth. <em>Never Boring.</em></p>
+      </div>
+      <nav aria-label="Footer"><h3>Navigate</h3><a href="#culture">Culture</a><a href="#labs">Labs</a><a href="#work">Work</a><a href="#lab">The Lab</a><a href="#why">Why us</a></nav>
+      <div><h3>Services</h3><a href="#labs">Culture Lab</a><a href="#labs">Brand Lab</a><a href="#labs">Growth Lab</a></div>
+      <div><h3>Say hello</h3><a href="mailto:hello@humorlabs.in">hello@humorlabs.in</a><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">LinkedIn</a><a href="#" rel="noopener">YouTube</a><a class="btn btn--lime btn--sm" href="#contact">Let's talk</a></div>
+    </div>
+    <div class="wrap footer__legal"><span>&copy; <span id="year">2026</span> HUMOR LABS&trade;. All rights reserved.</span><button type="button" id="toTop" class="chip-btn">Back to top</button></div>
+  </footer>
+
+  <dialog id="caseDlg" class="case" aria-labelledby="caseTitle">
+    <form method="dialog"><button class="case__close" aria-label="Close case study" data-cursor="CLOSE">&times;</button></form>
+    <div id="caseBody"></div>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

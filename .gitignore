@@ -1,0 +1,7 @@
+node_modules
+dist
+.claude
+.idea
+main.py
+.env
+*.log
