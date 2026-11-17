@@ -47,7 +47,9 @@ The contact form on the site submits into a Google Form, and each response is em
 5. In the execution log, copy the printed `ENQUIRY` block over the one in `src/content.js`.
 6. Run `npm run dev`, submit a test enquiry, and check the Google Form's Responses tab and your inbox.
 
-Until `ENQUIRY.formId` is filled in, the form only works in `npm run dev` (it logs the payload to the console) and shows a "not connected yet" message on a deployed site. The option lists in `src/content.js` (`OPTIONS`) must match the ones in the script. Run `setup` only once, since it creates a new form each time.
+The site form asks for: name, number, email, business name, business website URL, business requirement, how soon to start, and how they heard about you. The Google Form created by the script has a few extra questions (business offering, sub-offering, description, work style, requirement checkboxes). The site simply leaves those blank. Because Google marks "Business offering" as required, the site always sends a fixed value for it (`ENQUIRY.constants` in `src/content.js`); without it Google would reject every submission. The "Business requirement" text goes into the Google Form's "How can we help you?" answer.
+
+Until `ENQUIRY.formId` is filled in, the form only works in `npm run dev` (it logs the payload to the console) and shows a "not connected yet" message on a deployed site. The timeline options in `src/content.js` (`OPTIONS`) must match the ones in the script. Run `setup` only once, since it creates a new form each time.
 
 ## Deploy
 

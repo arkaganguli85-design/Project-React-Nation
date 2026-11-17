@@ -4,9 +4,8 @@ import { $, $$ } from './util.js';
 const REQUIRED = {
   name: 'Please tell us your name.',
   email: 'Please enter a valid email so we can reply.',
-  company: 'Please tell us your company or brand.',
-  offering: 'Please tell us what your business offers.',
-  help: 'Please tell us how we can help.',
+  company: 'Please tell us your business name.',
+  help: 'Please tell us what you need.',
 };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -18,7 +17,7 @@ async function send(data) {
     throw new Error('not-configured');
   }
   const body = new URLSearchParams();
-  for (const [key, value] of Object.entries(data)) {
+  for (const [key, value] of Object.entries({ ...data, ...ENQUIRY.constants })) {
     const entry = ENQUIRY.fields[key];
     if (!entry) continue;
     (Array.isArray(value) ? value : [value]).forEach((v) => { if (v !== '') body.append(entry, v); });
@@ -34,11 +33,7 @@ export function initEnquiry() {
   const done = $('#enqDone'), status = $('#enqStatus'), btn = $('#ctaBtn');
 
   // options come from content.js so the form and the Google Form stay in sync
-  const fillSelect = (el, list) => { el.innerHTML = '<option value="">Select one (optional)</option>' + list.map((o) => `<option>${o}</option>`).join(''); };
-  fillSelect($('#enqEngagement'), OPTIONS.engagement);
-  fillSelect($('#enqTimeline'), OPTIONS.timeline);
-  $('#enqReq').innerHTML = OPTIONS.requirements.map((o, i) =>
-    `<label class="enq__chip"><input type="checkbox" name="requirements" value="${o}" id="req${i}"><span>${o}</span></label>`).join('');
+  $('#enqTimeline').innerHTML = '<option value="">Select one (optional)</option>' + OPTIONS.timeline.map((o) => `<option>${o}</option>`).join('');
 
   const setError = (name, msg) => {
     const field = form.elements[name];
@@ -70,9 +65,7 @@ export function initEnquiry() {
     const fd = new FormData(form);
     const data = {
       name: fd.get('name').trim(), email: fd.get('email').trim(), phone: fd.get('phone').trim(), company: fd.get('company').trim(),
-      website: fd.get('website').trim(), offering: fd.get('offering').trim(), subOffering: fd.get('subOffering').trim(),
-      description: fd.get('description').trim(), requirements: fd.getAll('requirements'), help: fd.get('help').trim(),
-      engagement: fd.get('engagement'), timeline: fd.get('timeline'), source: fd.get('source').trim(),
+      website: fd.get('website').trim(), help: fd.get('help').trim(), timeline: fd.get('timeline'), source: fd.get('source').trim(),
     };
 
     btn.disabled = true; status.textContent = 'Sending...';
