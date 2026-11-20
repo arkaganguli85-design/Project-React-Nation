@@ -4,16 +4,22 @@
 // (it prints this exact object). Until formId is set, the form only works in `npm run dev`
 // (it logs the payload instead of sending) and shows an error on the live site.
 export const ENQUIRY = {
-  formId: '1FAIpQLSe1u5y55uWP5VK4MZfR8DTCnPopwUQR-s7UbCEnkZ8lOnPVRg', // the long id in https://docs.google.com/forms/d/e/<formId>/viewform
+  formId: '1FAIpQLScT5yzry8ImVCFi2hNVtCEFXYbvsfBU96m9brSkIPksQ8gpmw', // the long id in https://docs.google.com/forms/d/e/<formId>/viewform
   fields: {
-    name: 'entry.1471904556', email: 'entry.1191520876', phone: 'entry.2110695484', company: 'entry.49225103', website: 'entry.1150265260',
-    offering: 'entry.924812472', subOffering: 'entry.1333618907', description: 'entry.383141145',
-    requirements: 'entry.774326567', help: 'entry.1982930302', engagement: 'entry.1942578976', timeline: 'entry.1811269860', source: 'entry.445258345',
+    name: 'entry.1727090122',
+    phone: 'entry.1625363084',
+    email: 'entry.95299968',
+    company: 'entry.1521787653',
+    website: 'entry.866662747',
+    help: 'entry.1449309471',
+    timeline: 'entry.1073104972',
+    source: 'entry.1567667618',
   }, // each value looks like 'entry.123456789'
   fallbackEmail: '', // optional: shown only if sending fails
-  // The Google Form marks "Business offering" as required but the site no longer asks it. Without a value
-  // Google rejects the whole submission (silently, from a browser), so a fixed value is always sent.
-  constants: { offering: 'Not asked on the website form' },
+  // Fixed values for any required Google Form question the site does not ask (none right now).
+  // Without a value Google silently rejects the whole submission. Keys are names from `fields`,
+  // e.g. constants: { offering: 'Not asked' } once `fields.offering` exists.
+  constants: {},
 };
 
 // Option labels must match the Google Form exactly (the Apps Script uses the same list).
