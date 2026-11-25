@@ -55,7 +55,25 @@ Until `ENQUIRY.formId` is filled in, the form only works in `npm run dev` (it lo
 
 ## Deploy
 
-`dist/` is plain static files. Use Vercel, Netlify, Cloudflare Pages or S3 + CDN. Build command `npm run build`, output directory `dist`.
+`dist/` is plain static files, so any static host works. The recommended free option is **Cloudflare Pages**.
+
+### Cloudflare Pages (free, persistent)
+1. Cloudflare dashboard, Workers & Pages, create a project, **Connect to Git**, pick this repo.
+2. Framework preset **None**, build command `npm run build`, build output directory `dist`.
+3. Environment variables: `NODE_VERSION` = `20`. Optional but recommended once you have a domain: `SITE_URL` = `https://yourdomain.com` (no trailing slash).
+4. Deploy. Every push to `main` redeploys; other branches get preview URLs.
+
+`SITE_URL` feeds the share-card tags, canonical link, `robots.txt` and `sitemap.xml` (see `vite.config.js`). If it is not set, Cloudflare's `CF_PAGES_URL` (the `*.pages.dev` address) is used, and locally they stay relative.
+
+`public/_headers` sets caching and basic security headers, `public/404.html` is the not-found page, and `public/og-image.png` is the share image (regenerate with `scripts/make-og-image.mjs`).
+
+### Custom domain (for example one bought on GoDaddy)
+No certificate or code is shared with GoDaddy; Cloudflare issues the HTTPS certificate automatically.
+1. In Cloudflare, add the domain as a site (free plan). Cloudflare gives you two nameservers.
+2. At GoDaddy, open the domain's DNS settings and replace the nameservers with those two. If DNSSEC is on at GoDaddy, turn it off first. Remove any GoDaddy parking or forwarding records.
+3. Wait for Cloudflare to show the domain as Active (minutes to a few hours).
+4. In the Pages project, open Custom domains and add both `yourdomain.com` and `www.yourdomain.com`. Cloudflare creates the DNS records and certificate.
+5. Set the `SITE_URL` build variable to the final address and redeploy.
 
 ## Where to edit
 
