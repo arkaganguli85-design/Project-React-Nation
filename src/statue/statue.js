@@ -308,9 +308,10 @@ export async function createStatue(canvas, { reducedMotion = false, lowPower = f
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     // keep the whole head in frame on tall/narrow viewports
-    const portrait = h / w > 0.85;
-    const dist = portrait ? 10.8 : 8.6;
-    CAM_TARGET.y = portrait ? -0.5 : -0.75;
+    // fit by height first (head and shoulders), then back off if the box is too narrow (shoulders are about 4.8 units wide)
+    const fitWidth = 4.8 / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.aspect);
+    const dist = Math.max(10.8, fitWidth);
+    CAM_TARGET.y = -0.5;
     camera.position.set(0.5, 0.2, dist);
     camera.lookAt(CAM_TARGET);
     camera.updateProjectionMatrix();

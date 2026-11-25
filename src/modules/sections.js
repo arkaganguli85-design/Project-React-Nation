@@ -78,7 +78,7 @@ export function initSections() {
     const tween = gsap.to(track, { x: () => -dist(), ease: 'none', scrollTrigger: { trigger: '.work__pin', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 0.7, invalidateOnRefresh: true, anticipatePin: 1 } });
     return () => { work.classList.remove('is-pinned'); tween.kill(); gsap.set(track, { clearProps: 'transform' }); };
   });
-  mm.add('(max-width: 899px)', () => { rise('.case-card', '#workTrack', { x: 60, y: 0 }); });
+  mm.add('(max-width: 899px)', () => { rise('.client', '#workTrack', { x: 60, y: 0 }); });
 
   // why
   rise('.pair', '.pairs', { y: 40, stagger: 0.1 });

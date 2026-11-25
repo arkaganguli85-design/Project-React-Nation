@@ -61,7 +61,8 @@ Until `ENQUIRY.formId` is filled in, the form only works in `npm run dev` (it lo
 
 | What | Where |
 | --- | --- |
-| Enquiry form connection, option lists, case studies, statue click lines | `src/content.js` |
+| Enquiry form connection, option lists, clients, portfolio download, statue click lines | `src/content.js` |
+| Client logos and the portfolio PDF | `public/clients/`, `public/downloads/Humor_Labs_Portfolio.pdf` |
 | Enquiry form fields and logic | `index.html` (`#enquiry`), `src/modules/enquiry.js` |
 | Page copy and sections | `index.html` |
 | Colours, type, layout | `src/styles.css` (tokens at the top) |
@@ -70,7 +71,7 @@ Until `ENQUIRY.formId` is filled in, the form only works in `npm run dev` (it lo
 
 ## Notes
 
-- Case studies are labelled placeholders. No client names, numbers or results are invented; add verified ones in `src/content.js`.
+- The Work section lists the current clients from the portfolio deck (`CLIENTS` in `src/content.js`) and ends with a "More work" card that downloads the portfolio PDF. No results or numbers are shown because none have been supplied; add only verified ones. To update the PDF, replace `public/downloads/Humor_Labs_Portfolio.pdf` (keep it under 25 MB for Cloudflare Pages).
 - The H symbol is rebuilt as SVG from the logo in the brand guidelines (no vector master was supplied). Swap in the official paths in `index.html` and `public/*.svg` when available. Reference images are in `public/brand/`.
 - The statue is the CC0 scan "Marble Bust 01" by Rico Cilliers ([Poly Haven](https://polyhaven.com/a/marble_bust_01)), served from `public/models/marble_bust_01/` (2K textures, 1K on low-power devices). It is one mesh, so the head is rigged by bending the neck in the vertex shader (`HEAD_BEND`); the neon glasses, glow and light are attached to a separate head group.
 - If the model fails to load, the site falls back to a procedural SDF sculpt.

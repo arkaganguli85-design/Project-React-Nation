@@ -80,7 +80,6 @@
   <main id="main">
     <!-- 02 HERO -->
     <section id="hero" class="hero" aria-labelledby="heroTitle">
-      <div class="hero__arc" aria-hidden="true"></div>
       <span class="spark spark--a" aria-hidden="true"></span>
       <span class="spark spark--b" aria-hidden="true"></span>
       <i class="float float--sq" aria-hidden="true" data-depth="40"></i>
@@ -98,6 +97,7 @@
       </div>
 
       <div class="hero__statue" id="statueWrap">
+        <div class="hero__arc" aria-hidden="true"></div>
         <canvas id="statue" aria-label="A marble Greek bust wearing neon lime sunglasses. His head follows your cursor. Click him." role="img"></canvas>
         <div class="statue-fallback" id="statueFallback" hidden aria-hidden="true">
           <svg viewBox="0 -30 280 215"><polygon fill="#F7F6EF" points="60,12 110,12 65,165 15,165"/><polygon fill="#F7F6EF" points="180,12 230,12 185,165 135,165"/><path d="M 70 98 Q 125 162 172 94" fill="none" stroke="#F7F6EF" stroke-width="30"/><path d="M 52 80 Q 125 150 190 74" fill="none" stroke="#C6FF00" stroke-width="24"/><path fill="#C6FF00" d="M 232 -22 H 272 V 18 H 258 V -8 H 232 Z"/></svg>
@@ -203,7 +203,7 @@
         <div class="wrap work__head">
           <p class="eyebrow">Work</p>
           <h2 id="workTitle" class="display" data-split>LESS TALK. MORE RECEIPTS.</h2>
-          <p class="work__note"><b>Placeholders.</b> These cards are clearly marked samples. Real case studies and verified results go in <code>src/content.js</code>.</p>
+          <p class="work__note"><b>Our current ongoing clients.</b> Brands that trust HUMOR LABS.</p>
         </div>
         <div class="work__track" id="workTrack" role="list"></div>
       </div>
@@ -298,15 +298,10 @@
       </div>
       <nav aria-label="Footer"><h3>Navigate</h3><a href="#culture">Culture</a><a href="#labs">Labs</a><a href="#work">Work</a><a href="#lab">The Lab</a><a href="#why">Why us</a></nav>
       <div><h3>Services</h3><a href="#labs">Culture Lab</a><a href="#labs">Brand Lab</a><a href="#labs">Growth Lab</a></div>
-      <div><h3>Say hello</h3><a href="#enquiry">Send an enquiry</a><a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">LinkedIn</a><a href="#" rel="noopener">YouTube</a><a class="btn btn--lime btn--sm" href="#contact">Let's talk</a></div>
+      <div><h3>Say hello</h3><a href="#enquiry">Send an enquiry</a><a href="https://www.instagram.com/humorlabsofficial?cnvx=MXA0cmo3OHF3ZWFwMw==" target="_blank" rel="noopener noreferrer">Instagram</a><a href="#" rel="noopener">LinkedIn</a><a href="#" rel="noopener">YouTube</a><a class="btn btn--lime btn--sm" href="#contact">Let's talk</a></div>
     </div>
     <div class="wrap footer__legal"><span>&copy; <span id="year">2026</span> HUMOR LABS&trade;. All rights reserved.</span><button type="button" id="toTop" class="chip-btn">Back to top</button></div>
   </footer>
-
-  <dialog id="caseDlg" class="case" aria-labelledby="caseTitle">
-    <form method="dialog"><button class="case__close" aria-label="Close case study" data-cursor="CLOSE">&times;</button></form>
-    <div id="caseBody"></div>
-  </dialog>
 
   <script type="module" src="/src/main.js"></script>
 </body>

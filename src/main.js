@@ -5,7 +5,7 @@ import { runIntro } from './modules/intro.js';
 import { initScroll } from './modules/scroll.js';
 import { initCursor, initMagnetic, initTilt } from './modules/pointer.js';
 import { initSections, heroIn } from './modules/sections.js';
-import { initCases } from './modules/cases.js';
+import { initClients } from './modules/clients.js';
 import { initLab } from './modules/lab.js';
 import { initEnquiry } from './modules/enquiry.js';
 import { initEasterEggs } from './modules/easter.js';
@@ -58,7 +58,7 @@ async function start() {
   initCursor();
   initMagnetic();
   initTilt();
-  initCases();
+  initClients();
   initSections();
   initLab();
   initEnquiry();

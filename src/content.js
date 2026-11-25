@@ -27,50 +27,33 @@ export const OPTIONS = {
   timeline: ['As soon as possible', 'Within 1 to 3 months', 'Just exploring'],
 };
 
-// PLACEHOLDER case studies. Do not add client names, numbers or results until verified.
-// Each field renders on the card and in the case-study dialog.
-export const CASES = [
+// Current clients, from the "Our current ongoing clients" slide in Humor_Labs_Portfolio_Clean.pdf.
+// Logos are cropped from that slide (public/clients/). Do not add results or numbers until verified.
+export const CLIENTS = [
   {
-    id: 'case-1', brand: 'CLIENT NAME', industry: 'Consumer brand',
-    objective: 'Objective goes here: what the client needed to change.',
-    strategy: 'Creative strategy goes here: the insight and the idea.',
-    execution: 'Execution goes here: formats, channels, production.',
-    results: null,
-    challenge: 'The brief, in the client\'s words.', insight: 'What the audience research showed.',
-    idea: 'The one-line creative idea.', outcome: 'Verified results appear here once supplied.',
-    tone: 'lime',
+    id: 'jio-insurance-broking', name: 'Jio Insurance Broking', logo: 'jio.jpg', logoAlt: 'Jio Insurance Broking Ltd. logo',
+    about: 'Insurance broking campaign focused on digital reach, audience acquisition and campaign performance.',
+    services: ['Performance Marketing', 'Campaign Management', 'Digital Ads'],
   },
   {
-    id: 'case-2', brand: 'CLIENT NAME', industry: 'Food and beverage',
-    objective: 'Objective goes here: what the client needed to change.',
-    strategy: 'Creative strategy goes here: the insight and the idea.',
-    execution: 'Execution goes here: formats, channels, production.',
-    results: null,
-    challenge: 'The brief, in the client\'s words.', insight: 'What the audience research showed.',
-    idea: 'The one-line creative idea.', outcome: 'Verified results appear here once supplied.',
-    tone: 'white',
+    id: 'legal-bruz', name: 'Legal Bruz India & UK', logo: 'legal-bruz.jpg', logoAlt: 'Legal Bruz logo',
+    about: 'Legal services brand catering to trademark registration and intellectual property solutions across India and the UK.',
+    services: ['Profile Handling', 'Content Creation', 'Shoots', 'Digital Marketing', 'Ads'],
   },
   {
-    id: 'case-3', brand: 'CLIENT NAME', industry: 'Tech and apps',
-    objective: 'Objective goes here: what the client needed to change.',
-    strategy: 'Creative strategy goes here: the insight and the idea.',
-    execution: 'Execution goes here: formats, channels, production.',
-    results: null,
-    challenge: 'The brief, in the client\'s words.', insight: 'What the audience research showed.',
-    idea: 'The one-line creative idea.', outcome: 'Verified results appear here once supplied.',
-    tone: 'orange',
+    id: 'suncolour-salon', name: 'Suncolour Salon', logo: 'suncolour.jpg', logoAlt: 'Suncolor Unisex Beauty Salon logo',
+    about: 'Salon and beauty brand focused on building its digital presence and showcasing its services.',
+    services: ['Profile Handling', 'Content Creation', 'Shoots', 'Influencer Marketing', 'Digital Marketing', 'Business Management'],
   },
   {
-    id: 'case-4', brand: 'CLIENT NAME', industry: 'Retail and D2C',
-    objective: 'Objective goes here: what the client needed to change.',
-    strategy: 'Creative strategy goes here: the insight and the idea.',
-    execution: 'Execution goes here: formats, channels, production.',
-    results: null,
-    challenge: 'The brief, in the client\'s words.', insight: 'What the audience research showed.',
-    idea: 'The one-line creative idea.', outcome: 'Verified results appear here once supplied.',
-    tone: 'dark',
+    id: 'pgp-learning', name: 'PGP Learning', logo: 'pgp.jpg', logoAlt: 'PGP Academy logo',
+    about: 'Learning and education brand promoting courses through digital campaigns and course enrolments.',
+    services: ['Performance Marketing', 'Course Ads', 'Campaign Marketing', 'Offline Marketing Campaign'],
   },
 ];
+
+// The "More" card at the end of the Work track downloads this file.
+export const PORTFOLIO = { href: 'downloads/Humor_Labs_Portfolio.pdf', sizeLabel: '22 MB PDF', filename: 'Humor_Labs_Portfolio.pdf' };
 
 export const STATUE_LINES = [
   'Ow. Marble has feelings too.',
